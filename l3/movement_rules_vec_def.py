@@ -16,7 +16,21 @@ class Vector(tuple):
 		first_element = self[0] + vector[0]
 		second_element = self[1] + vector[1]
 		return Vector([first_element, second_element])
+
 	
+	def subtract(self, vector):
+		''' Peform vector subtraction with $self and $vector.  Return a new Vector object.  
+
+		Args:
+		vector (Vector):  The vector being added to $self.
+
+		Returns:
+		(Vector): Result of vector addition.
+		'''
+		first_element = self[0] - vector[0]
+		second_element = self[1] - vector[1]
+		return Vector([first_element, second_element])
+
 class VectorDimensionIncorrect(Exception):
 	def __init__(self):
 		super().__init__("VectorDimensionIncorrect: An attempt to make a Vector object with dimension not 2 was made.")

@@ -1,39 +1,7 @@
 ''' This file contains the Board class definition and the SetupBoard function'''
-from l2.pieces import Pawn, Rook, Knight, Bishop, Queen, King
-from l2.movement_rules_vec_def import Vector 
-
-class Board(dict):
-	def __init__(self):
-		''' Creates an empy board.  The keys are the vectors to the square.  '''
-		for row in range(8):
-			for col in range(8):
-				vec = Vector([row, col])
-				self[vec] = None
-
-	def is_piece(self, position):
-		''' Return True if there is a piece at $position on the board.  
-			If the position is not on the board raise exception.  
-
-		Args: 
-		position (Vector): Position vector that is being checked. 
-
-		Returns:
-		boolean expression.  True if there is a piece at $position.
-		'''
-		if position[0] not in range(8) or position[1] not in range(8):
-			raise PositionNotOnBoard
-		return self[position] is not None
-
-	def is_on_board(self, position):
-		''' Return True if the $position exists on the board. '''
-		if position[0] in range(8) and position[1] in range(8):
-			return True
-		else:
-			return False
-
-class PositionNotOnBoard(Exception):
-	def __init__(self):
-		super().__init__("PositionNotOnBoard: A Board method was passed a position not on the chess board.")
+from l3.pieces import Pawn, Rook, Knight, Bishop, Queen, King
+from l3.movement_rules_vec_def import Vector
+from l2.board import Board  
 
 def SetupBoard():
 	''' This function creates the board and pieces.  

@@ -4,3 +4,4 @@ class Move():
 		self.piece = piece
 		self.old_position = old_position
 		self.new_position = new_position
+
