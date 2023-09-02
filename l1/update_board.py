@@ -61,6 +61,10 @@ def UpdateBoard(board, move):
 	if board.is_piece(move.new_position):
 		del board[move.new_position]
 
+	if move.piece.name == 'pawn':
+		# This is a clunky hack to change the pawn has_moved flag to True after the first move
+		move.piece.moved()
+
 	board[move.new_position] = move.piece 
 	board[move.old_position] = None
 	return board 

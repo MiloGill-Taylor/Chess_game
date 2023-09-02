@@ -90,12 +90,18 @@ class Board(dict):
 
 		if not self.is_on_board(position):
 			raise PositionNotOnBoard
-
+		#Gross, need to change if structure
 		if piece.name == 'pawn':
+			if piece.has_moved:
+				advance_position = position.add(piece.advance_vector)
+				if advance_position[0] in range(8) and self.is_empty(advance_position):
+					moves.append(Move(piece, position, advance_position))
+			else:
+				advance_positions = piece.get_first_move_positions(position)
+				for new_position in advance_positions:
+					if self.is_empty(new_position):
+						moves.append(Move(piece, position, new_position))
 
-			advance_position = position.add(piece.advance_vector)
-			if advance_position[0] in range(8) and self.is_empty(advance_position):
-				moves.append(Move(piece, position, advance_position))
 		
 			attack_positions = piece.get_attack_positions(position)
 			for new_position in attack_positions:
