@@ -1,5 +1,5 @@
 ''' This file contains the Board class definition and the SetupBoard function'''
-from l3.pieces import Pawn, Rook, Knight, Bishop, Queen, King
+from l2.pieces import Pawn, Rook, Knight, Bishop, Queen, King
 from l3.movement_rules_vec_def import Vector
 from l2.board import Board  
 

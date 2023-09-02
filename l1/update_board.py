@@ -1,5 +1,4 @@
 ''' Contains the UpdateBoard function''' 
-from l3.movement_rules_vec_def import  MOVEMENT_RULES, Vector 
 
 def pawn_move_legal(board, move):
 	pawn = move.piece 
@@ -56,8 +55,8 @@ def UpdateBoard(board, move):
 	Returns:
 	board (Board): The board the game is being played on.  
 	'''
-	if not is_move_legal(board, move):
-		raise IllegalMove
+	# if not is_move_legal(board, move):
+	# 	raise IllegalMove
 
 	if board.is_piece(move.new_position):
 		del board[move.new_position]

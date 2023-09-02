@@ -4,7 +4,6 @@ from l1.update_board import UpdateBoard
 import pprint
 
 
-
 board = SetupBoard()
 
 valid_moves = GenerateAllMoves(board)
@@ -12,4 +11,5 @@ valid_moves = GenerateAllMoves(board)
 board = UpdateBoard(board, valid_moves[3])
 
 pprint.pp(board)
+
 
