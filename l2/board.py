@@ -140,6 +140,9 @@ class Board(dict):
 					moves.append(Move(piece, position, potential_position))
 					
 		return moves
+	#TODO
+	def is_checkmate(self):
+		return False
 
 
 
